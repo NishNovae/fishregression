@@ -4,12 +4,7 @@ import pickle
 import numpy as np
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
-import os
-
-def grab_path(filename):
-    this_path = os.path.abspath(__file__)
-    data_path = os.path.dirname(this_path) + "/data/" + filename
-    return data_path
+from fishregression.pathfinder import grab_path
 
 def load_csv(data_name="testdata.csv"):
     length_data, weight_data = [], []
@@ -29,7 +24,7 @@ def load_csv(data_name="testdata.csv"):
 
     return length_data, weight_data
     
-def train_lr(model_name="model.pkl"):
+def train_lr(model_name="regressor.pkl"):
     lr = LinearRegression()
     length_data, weight_data = load_csv()
     lr.fit(length_data, weight_data)
@@ -38,7 +33,7 @@ def train_lr(model_name="model.pkl"):
     with open(model_path, "wb") as model:
         pickle.dump(lr, model)
 
-def test_lr(method=1, model_name="model.pkl"):
+def test_lr(method=1, model_name="regressor.pkl"):
     if method == 1:
         lr = LinearRegression()
     elif method == 0:
@@ -60,7 +55,6 @@ def test_lr(method=1, model_name="model.pkl"):
     #acc = round(tmp/len(test_in) * 100, 2)
     #print(f"RESULT: {acc}% accuracy\n")
 
-#load_csv()
-#train_lr()
-#test_lr(0)
+train_lr()
+test_lr(0)
 #test_lr(1)
