@@ -8,4 +8,4 @@ COPY src/fishregression/data/classifier.pkl /code/data/classifier.py
 
 RUN pip install --no-cache-dir --upgrade git+https://github.com/NishNovae/fishregression.git@main
 
-CMD ["uvicorn", "main2:app", "--host", "0.0.0.0", "--port", "8080"]
+CMD ["uvicorn", "main_classifier:app", "--host", "0.0.0.0", "--port", "8080"]

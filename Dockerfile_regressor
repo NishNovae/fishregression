@@ -8,4 +8,4 @@ COPY src/fishregression/data/regressor.pkl /code/data/regressor.py
 
 RUN pip install --no-cache-dir --upgrade git+https://github.com/NishNovae/fishregression.git@main
 
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8080"]
+CMD ["uvicorn", "main_regressor:app", "--host", "0.0.0.0", "--port", "8080"]
