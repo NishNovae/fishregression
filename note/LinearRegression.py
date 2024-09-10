@@ -66,7 +66,7 @@ plt.show()
 # https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html
 from sklearn.linear_model import LinearRegression
 lr = LinearRegression()
-lr.fit()
+lr.fit(train_input, train_target)
 
 
 
