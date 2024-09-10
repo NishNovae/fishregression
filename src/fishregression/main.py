@@ -13,7 +13,7 @@ def run_prediction(length: float):
     with open(model_path, "rb") as model:
         lr = pickle.load(model)
     pred = lr.predict([[length**2, length]])     # polynomial regression
-    return float(r[0])
+    return float(pred[0])
 
 
 @app.get("/fish")
