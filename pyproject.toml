@@ -1,6 +1,6 @@
 [project]
 name = "fishregression"
-version = "0.1.1"
+version = "0.2.0"
 description = "Default template for PDM package"
 authors = [
     {name = "NishNovae", email = "raecrowned@gmail.com"},
@@ -10,6 +10,7 @@ dependencies = [
     "matplotlib>=3.7.5",
     "uvicorn[standard]>=0.30.6",
     "fastapi>=0.114.0",
+    "requests>=2.32.3",
 ]
 requires-python = ">=3.11"
 readme = "README.md"
