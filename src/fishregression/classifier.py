@@ -4,7 +4,12 @@ import numpy as np
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.model_selection import train_test_split
 import pickle
-from fishregression.pathfinder import grab_path
+import os
+
+def grab_path(filename):
+    this_path = os.path.abspath(__file__)
+    data_path = os.path.dirname(this_path) + "/data/" + filename
+    return data_path
 
 def load_csv(data_name="testdata.csv"):
     data_path = grab_path(data_name)

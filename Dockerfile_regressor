@@ -3,7 +3,8 @@ FROM python:3.11
 
 WORKDIR /code
 
-COPY src/ /code/
+COPY src/fishregression/main_regressor.py /code/main_regressor.py
+COPY src/fishregression/data/regressor.pkl /code/data/regressor.pkl
 
 RUN pip install --no-cache-dir --upgrade git+https://github.com/NishNovae/fishregression.git@main
 

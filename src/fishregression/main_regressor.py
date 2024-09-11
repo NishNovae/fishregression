@@ -1,8 +1,13 @@
 from fastapi import FastAPI
 import pickle
-from fishregression.pathfinder import grab_path
+import os
 
 app = FastAPI()
+
+def grab_path(filename):
+    this_path = os.path.abspath(__file__)
+    data_path = os.path.dirname(this_path) + "/data/" + filename
+    return data_path
 
 @app.get("/")
 def read_root():

@@ -4,7 +4,12 @@ import pickle
 import numpy as np
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
-from fishregression.pathfinder import grab_path
+import os
+
+def grab_path(filename):
+    this_path = os.path.abspath(__file__)
+    data_path = os.path.dirname(this_path) + "/data/" + filename
+    return data_path
 
 def load_csv(data_name="testdata.csv"):
     length_data, weight_data = [], []
