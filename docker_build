@@ -1,0 +1,11 @@
+#!/bin/bash
+cp Dockerfile_regressor Dockerfile
+sudo docker build --no-cache -t say7777/regressor .
+rm Dockerfile
+
+cp Dockerfile_classifier Dockerfile
+sudo docker build --no-cache -t say7777/classifier .
+rm Dockerfile
+
+sudo docker push say7777/regressor:latest
+sudo docker push say7777/classifier:latest
