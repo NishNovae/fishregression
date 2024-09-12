@@ -40,6 +40,7 @@ def train_kn(model_name="classifier.pkl"):
     model_path = grab_path(model_name)
     with open(model_path, "wb") as model:
         pickle.dump(kn, model)
+    print("[INFO] classifier.pkl updated!")
 
 def test_kn(method=1, model_name="classifier.pkl"):
     kn = KNeighborsClassifier()
@@ -64,5 +65,5 @@ def test_kn(method=1, model_name="classifier.pkl"):
 
 #load_csv()
 train_kn()
-test_kn(1)
-test_kn(2)
+#test_kn(1)
+#test_kn(2)

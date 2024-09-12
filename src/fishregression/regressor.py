@@ -37,6 +37,7 @@ def train_lr(model_name="regressor.pkl"):
     model_path = grab_path(model_name)
     with open(model_path, "wb") as model:
         pickle.dump(lr, model)
+    print("[INFO] regressor.pkl updated!")
 
 def test_lr(method=1, model_name="regressor.pkl"):
     if method == 1:
@@ -61,5 +62,5 @@ def test_lr(method=1, model_name="regressor.pkl"):
     #print(f"RESULT: {acc}% accuracy\n")
 
 train_lr()
-test_lr(0)
+#test_lr(0)
 #test_lr(1)
