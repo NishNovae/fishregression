@@ -1,7 +1,8 @@
 # src/fishregresssion/cli.py
 import requests
+import os
 
-URL = "http://43.202.67.126:8080/"
+URL = "http://" + os.environ["AWS_PIP"] + ":8080/"
 
 def main():
     print("[INFO] Starting CLI for fish predictor...")
@@ -33,6 +34,17 @@ def main():
         print(f"🐋 {type_pred}! 🐋")
 
         while True:
+            yn = input("Was I right? [y/n] ")
+            if yn == 'y' or yn == 'Y':
+                print("Yay!")
+                break
+            elif yn == 'n' or yn == 'N':
+                print("...oh...")
+                break
+            else:
+                print("Please type in either 'y' or 'n'.")
+
+        while True:
             yn = input("Continue? [y/n] ")
             if yn == 'y' or yn == 'Y':
                 print("[INFO] Continue...\n")
@@ -43,5 +55,4 @@ def main():
             else:
                 print("Please type in either 'y' or 'n'.")
         length = -1
-        print()
 main()

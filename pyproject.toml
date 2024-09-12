@@ -1,7 +1,7 @@
 [project]
 name = "fishregression"
-version = "0.2.0"
-description = "Default template for PDM package"
+version = "0.2.1"
+description = "Guessing fish type based on length, Bream/Smelt edition"
 authors = [
     {name = "NishNovae", email = "raecrowned@gmail.com"},
 ]
@@ -28,3 +28,6 @@ note = [
     "notebook>=7.2.2",
 ]
 matplotlib = []
+
+[project.scripts]
+fish_predictor = "fishregression.cli:main"
